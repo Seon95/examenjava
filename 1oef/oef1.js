@@ -9,16 +9,18 @@ const gemente = rl.question("geef u Gemeente in aub")
 
 const voornaam = vrnaam.slice(0,1).toUpperCase() + ".";
 const gemeente = gemente.toUpperCase();
+const volnaam = voornaam+achternaam ;
+const blanco = " ";
+const spaties= straatHuisnmr.length  - volnaam.length;
+const spaties2 = straatHuisnmr.length - (postcode.length+gemeente.length);
 
-// function tekening(tekst){
-//     const bar = "-";
-//     return "/"+bar.repeat(tekst.length)+ "\\"  + "\n" + "|" + tekst + "|" + "\n" + "\\"+bar.repeat(tekst.length)+ "/"
+// Ik ga ervanuit dat Straat + Huisnummer langste regel gaat zijn //
     
 const bar= "-"
 
 if(achternaam.length > 40|| straatHuisnmr.length >40|| voornaam.length >40|| gemeente.length > 40){
 
- console.log("te breed")
+ console.log("Te breed. Gebruik zfkortingen in de breedste stukken")
 
 }
 else if(achternaam.length == 0|| straatHuisnmr.length == 0|| voornaam.length == 0 || gemeente.length == 0 || postcode.length == 0){
@@ -36,6 +38,7 @@ else if(postcode > 9900 || postcode < 1000){
 
 else{
 
-    console.log(bar.repeat(straatHuisnmr.length) + "\n" +  "|" + " " +voornaam + achternaam+  " " + "|" + "\n" +"|" + " " +straatHuisnmr+ " " + "|" + "\n" + "|" + " " +postcode + " " + gemeente + " " + "|" +  "\n"+ bar.repeat(straatHuisnmr.length))
+    console.log(bar.repeat(straatHuisnmr.length + 4) + "\n" +  "|" + " " +volnaam+ blanco.repeat(spaties +1)+ "|" + "\n" +"|" + " " +straatHuisnmr+ " " + "|" + "\n" + "|" + " " +postcode + " " + gemeente + blanco.repeat(spaties2) + "|" +  "\n"+ bar.repeat(straatHuisnmr.length +4))
 
 }
+
