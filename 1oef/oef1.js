@@ -20,7 +20,7 @@ const bar= "-"
 
 if(achternaam.length > 40|| straatHuisnmr.length >40|| voornaam.length >40|| gemeente.length > 40){
 
- console.log("Te breed. Gebruik zfkortingen in de breedste stukken")
+ console.log("Te breed. Gebruik afkortingen in de breedste stukken")
 
 }
 else if(achternaam.length == 0|| straatHuisnmr.length == 0|| voornaam.length == 0 || gemeente.length == 0 || postcode.length == 0){
